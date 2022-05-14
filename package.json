@@ -1,0 +1,36 @@
+{
+  "type": "module",
+  "name": "poc-proxied-mongodb",
+  "version": "1.0.0",
+  "description": "JavaScript MongoClient Proxy to transform input query and output result",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node -r dotenv/config src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcacars/poc-proxied-mongodb.git"
+  },
+  "keywords": [
+    "mongodb",
+    "es6",
+    "proxy",
+    "data"
+  ],
+  "author": "Gabriel Anderson <gcacars@gmail.com> (https://github.com/gcacars)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/gcacars/poc-proxied-mongodb/issues"
+  },
+  "homepage": "https://github.com/gcacars/poc-proxied-mongodb#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "mongodb": "^4.5.0"
+  },
+  "devDependencies": {
+    "@nexso/eslint-config": "^1.1.8",
+    "eslint": "^8.15.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}
