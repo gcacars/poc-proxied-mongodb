@@ -26,7 +26,9 @@
   "homepage": "https://github.com/gcacars/poc-proxied-mongodb#readme",
   "dependencies": {
     "dotenv": "^16.0.1",
-    "mongodb": "^4.5.0"
+    "mongodb": "^4.5.0",
+    "stream-buffers": "^3.0.2",
+    "vm2": "^3.9.9"
   },
   "devDependencies": {
     "@nexso/eslint-config": "^1.1.8",
