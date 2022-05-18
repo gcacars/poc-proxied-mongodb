@@ -12,8 +12,6 @@ async function runHook(script, context) {
       external: true,
       builtin: ['crypto', 'repl'],
       root: ['./'],
-      // root: ['./node_modules/mongodb'],
-      // context: 'sandbox',
     },
     env: {},
     sandbox: {
@@ -23,7 +21,7 @@ async function runHook(script, context) {
     },
   });
 
-  return vm.run(script);
+  return vm.run(script, './vm.js');
 }
 
 process.on('uncaughtException', (err) => {

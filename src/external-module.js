@@ -1,7 +1,7 @@
 import runHook from './runHook.js';
 
 async function main() {
-  const result = await runHook(`import { ObjectID } from 'mongodb';
+  const result = await runHook(`const { ObjectID } = require('mongodb');
 
 const { context } = global;
 

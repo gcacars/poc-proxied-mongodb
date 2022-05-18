@@ -1,3 +1,4 @@
+import vm from 'vm';
 import repl from 'repl';
 import streamBuffers from 'stream-buffers';
 
@@ -11,7 +12,7 @@ async function getLastEvaluation() {
       const writer = new streamBuffers.WritableStreamBuffer();
       let lastEval;
 
-      repl.start({
+      const runner = repl.start({
         input: reader,
         output: writer,
         writer(output) {
@@ -23,14 +24,14 @@ async function getLastEvaluation() {
         resolve(lastEval);
       });
 
-      reader.push(`const { createHmac } = require('crypto');
+      runner.context = vm.createContext({
+        global: { context: { id: '607100a17d0eaf3ff49d7a81' } },
+      });
 
-const { context } = global;
+      reader.push(`const { context } = global;
 
 async function main() {
-  return createHmac('sha256', '12345')
-          .update('123hjgjh21g3')
-          .digest('hex');
+  return context.id;
 }
 
 main();`);
